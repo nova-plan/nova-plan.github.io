@@ -1,0 +1,221 @@
+<!--
+RESEARCH PROJECT WEBSITE TEMPLATE
+
+This is a template for creating research project websites. To customize:
+
+1. TITLE & HEADER:
+   - Update the <title> tag
+   - Replace "Your Project Title" and "Your Project Subtitle" in the hero section
+
+2. ABSTRACT:
+   - Replace the placeholder text in the abstract section with your project description
+
+3. METHODS:
+   - Update the methods image: assets/images/[YOUR_METHODS_DIAGRAM.png]
+   - Replace "Your Method Name" and the description text
+
+4. VIDEO GALLERIES:
+   - Replace all video sources with your own videos
+   - Update the section titles and captions to match your content
+   - Videos should be placed in assets/videos/ directory
+
+5. EXPERIMENTS/ABLATIONS:
+   - Update section titles from generic names to your specific experiment names
+   - Replace video sources and descriptions
+
+6. FOOTER:
+   - Update with your name/institution and year
+
+7. ASSETS:
+   - Replace assets/videos/teaser_ball_3x.mp4 with your hero video
+   - Replace assets/images/method.gif with your methods diagram
+   - Add your videos to assets/videos/ directory
+
+The template is structured for research papers but can be adapted for any project.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaPlan Project Website</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- ‑‑‑‑‑‑  STYLE SHEETS  ‑‑‑‑‑‑  -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <!-- ============================================================ -->
+  <!--  MAIN CONTENT (now displayed by default)                     -->
+  <!-- ============================================================ -->
+  <div id="content" style="display:block;">
+    <!-- HERO -->
+    <header class="full-page-image" id="hero">
+      <video id="bg-video" preload="metadata" poster="assets/img/hero_placeholder.png" autoplay muted playsinline loop>
+        <!-- Replace with your project hero video -->
+        <source src="assets/mp4/placeholder.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay"></div>
+      <div class="bottom-overlay" style="padding:0 24px;">
+        <h1>NovaPlan<br /><span style="font-size: 0.7em; font-weight: 300;">Your Project Subtitle Here</span></h1>
+      </div>
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" onclick="scrollToContent()">
+        ↓
+      </div>
+    </header>
+    
+    <!-- MAIN CONTENT BODY -->
+    <main class="main-content">
+      <!-- <div class="hero-text">Versatile Loco-Manipulation through Flexible Interlimb Coordination</div> -->
+
+      <div class="sub-hero-text">NovaPlan: Your Catchy Project Tagline Here</div>
+
+      <div class="authors">Annoymous Authors<br/></div>
+
+      <!-- <div class="quick-links"><a href="paper.pdf" target="_blank">[pdf]</a><a href="#" onclick="return false;">[arXiv (after review)]</a><a href="#" onclick="return false;">[code (after review)]</a></div> -->
+
+      <div class="tagline" id="abstract">Abstract</div>
+      <div class="section">
+        <p>
+          This is your project abstract. Replace this text with a concise summary of your research, the problems you solved, and
+          the key contributions of your work.
+        </p>
+      </div>
+
+      <div class="tagline" id="interactive-viewer">Interactive Viewer</div>
+      <!-- TODO: add starting image + generated video + execution video -->
+      <div class="section">
+        <div class="task-selector" id="task-buttons">
+          <button type="button" class="task-button active" data-value="example_task">Example Task</button>
+        </div>
+        <div class="viewer-container">
+          <div class="viewer-main">
+            <iframe id="task-viewer" style="display: block; width: 100%; height: 500px; border: none;"></iframe>
+            <p class="figure-caption">
+              3D Point Cloud & Actionable Flow from Generated Video <br/>
+              <b>Note:</b> The visualized end-effector is offset from the physical one due to longer gripper fingers used in real-world experiments.
+            </p>
+          </div>
+          <div class="media-column">
+            <div class="media-item">
+              <p>Initial Observation</p>
+              <img id="initial-observation" alt="Initial Observation">
+            </div>
+            <div class="media-item">
+              <p>Generated Video</p>
+              <video id="generated-video" autoplay muted playsinline loop></video>
+            </div>
+            <div class="media-item">
+              <p>Execution Video (1x speed)</p>
+              <video id="execution-video" autoplay muted playsinline loop></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="tagline" id="methods">Methods</div>
+    <!-- TODO: use ppt do a gif -->
+    <div class="section">
+      <video src="assets/mp4/placeholder.mp4" style="width: 100%; margin: 20px 0 10px 0;" autoplay muted playsinline
+        loop></video>
+      <p class="figure-caption">
+        <b>Methodology Overview:</b> Describe your method here. Mention the key stages of your pipeline, such as data
+        processing, model architecture, or execution strategy.
+      </p>
+    </div>
+    
+    <!-- Start of Ablations/Experiments -->
+    <div class="tagline" id="ablations">Experiments</div>
+      <!-- Example Experiment Gallery -->
+      <div class="video-gallery-section" id="gallery-section-example">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="example_experiment">
+            <div class="gallery-item">
+              <img class="gallery-video" src="assets/img/placeholder.png" />
+              <div class="r2s-video-caption">Step 1: Observation</div>
+            </div>
+            <div class="gallery-item">
+              <video class="gallery-video" src="assets/mp4/placeholder.mp4" autoplay muted playsinline loop></video>
+              <div class="r2s-video-caption">Step 2: Generation</div>
+            </div>
+            <div class="gallery-item">
+              <video class="gallery-video" src="assets/mp4/placeholder.mp4" autoplay muted playsinline loop></video>
+              <div class="r2s-video-caption">Step 3: Execution</div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-caption-container">
+          <div class="gallery-nav-controls">
+                <button class="gallery-nav left" id="scrollLeftBtnexample">&lt;</button>
+                <button class="gallery-nav right" id="scrollRightBtnexample">&gt;</button>
+            </div>
+            <p class="figure-caption gallery-caption">
+                <b>Example Experiment:</b> Describe the experiment setup, the goal, and the observed results.
+            </p>
+        </div>
+      </div>
+    <!-- End of Ablations -->
+
+    <div class="tagline" id="experiment-results">Experiment Results</div>
+
+    <!-- Video Gallery Section - mobile interlimb coordination -->
+    <div class="video-gallery-section" id="gallery-section-results">
+      <div class="video-gallery-container">
+        <div class="video-gallery" id="results">
+          <img class="gallery-video" src="assets/img/placeholder_results.png" alt="Experiment Results Placeholder">
+        </div>
+      </div>
+      <div class="gallery-caption-container">
+          <p class="figure-caption gallery-caption">
+              <b>Experiment Results:</b> 
+              Replace this image with your results plot (e.g., success rates, performance metrics). Briefly describe your findings
+              here.
+          </p>
+      </div>
+    </div>
+  <!-- End Video Gallery Section -->
+    
+    <div class="tagline" id="failure-modes">Failure Modes</div>
+      <!-- Failure Mode Example -->
+      <div class="video-gallery-section" id="gallery-section-failure">
+        <div class="video-gallery-container">
+          <div class="video-gallery" id="failure_modes">
+            <div class="gallery-item">
+              <video class="gallery-video" src="assets/mp4/placeholder.mp4" autoplay muted playsinline loop></video>
+              <div class="r2s-video-caption">Failure Mode 1: Description</div>
+            </div>
+            <div class="gallery-item">
+              <img class="gallery-video" src="assets/img/placeholder.png" />
+              <div class="r2s-video-caption">Failure Mode 2: Description</div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery-caption-container">
+          <div class="gallery-nav-controls">
+                <button class="gallery-nav left" id="scrollLeftBtnfailure">&lt;</button>
+                <button class="gallery-nav right" id="scrollRightBtnfailure">&gt;</button>
+            </div>
+            <p class="figure-caption gallery-caption">
+                <b>Failure Modes:</b> Analyze where your method currently fails. This provides valuable insights for future
+                improvements.
+            </p>
+        </div>
+      </div>
+    
+    <!-- End of main content -->
+    </main>
+    <footer class="footer">Website template adapted from various research projects.
+    </footer>
+  </div>
+
+  <!-- ============================================================ -->
+  <!--  JS                                                          -->
+  <!-- ============================================================ -->
+  <script src="assets/js/full_screen_video.js"></script>
+  <script src="assets/js/scroll_button.js"></script>
+  <script src="assets/js/task-switcher.js"></script>
+</body>
+</html>
