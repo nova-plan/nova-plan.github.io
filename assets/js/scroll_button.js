@@ -1,5 +1,5 @@
 // Gallery navigation
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const galleries = [
     {
       sectionId: 'gallery-section-cup_on_plate',
@@ -60,6 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
       galleryInnerId: 'failure_mode_1',
       scrollLeftBtnId: 'scrollLeftBtnfailure_mode_1',
       scrollRightBtnId: 'scrollRightBtnfailure_mode_1'
+    },
+    {
+      sectionId: 'gallery-section-failure',
+      galleryInnerId: 'failure',
+      scrollLeftBtnId: 'scrollLeftBtnfailure',
+      scrollRightBtnId: 'scrollRightBtnfailure'
     }
   ];
 
