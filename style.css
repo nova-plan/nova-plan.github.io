@@ -19,7 +19,7 @@ body {
 
 /* Give padding back to the article body only – not the full‑screen hero */
 .page-content {
-  padding: 60px 30px
+  padding: 60px 40px;
 }
 
 /* ------------------------------------------------------------------
@@ -167,7 +167,7 @@ header.full-page-image .bottom-overlay h1 {
   font-size: 16px;
   color: #333;
   line-height: 1.6;
-  margin: -32.5px 0 17.5px;
+  margin: -32.5px 0 25px;
   text-align: left
 }
 
@@ -200,7 +200,7 @@ header.full-page-image .bottom-overlay h1 {
   color: #fff;
   display: inline-block;
   padding: 8px 16px;
-  margin: 40px 0
+  margin: 50px 0 20px;
 }
 
 .section-subtitle {
@@ -210,7 +210,7 @@ header.full-page-image .bottom-overlay h1 {
   color: #fff;
   display: inline-block;
   padding: 6px 14px;
-  margin: 30px 0
+  margin: 40px 0 15px;
 }
 
 /* QUICK LINKS */
@@ -248,7 +248,7 @@ img {
 
 /* VIDEO GALLERY – unchanged core rules (trimmed for brevity) */
 .video-gallery-section {
-  margin: 40px 0;
+  margin: 0 0 20px;
   width: 100vw;
   position: relative;
   left: 50%;
@@ -321,7 +321,7 @@ img {
 
 .gallery-caption-container {
   max-width: 1280px;
-  margin: 15px auto 0;
+  margin: 20px auto 0;
   padding: 0 20px;
   display: flex;
   align-items: flex-start;
@@ -342,12 +342,9 @@ img {
   font-size: 14px;
   color: #555;
   text-align: left;
-  margin-top: 1px;
-  /* Space above caption */
-  margin-bottom: 36px;
-  /* Space below caption, before next element */
+  margin-top: 24px;
+  margin-bottom: 20px;
   padding: 0 20px;
-  /* Add some horizontal padding */
 }
 
 /*.gallery-caption-row {*/
@@ -459,6 +456,10 @@ img {
   flex-shrink: 0;
 }
 
+.viewer-main p.figure-caption {
+  margin-top: 24px;
+}
+
 .media-column {
   flex: 1;
   /* Takes up 1/4 of the space */
@@ -501,8 +502,17 @@ img {
 
 .section {
   font-size: 20px;
-  line-height: 1.7;
-  margin: 0 0 40px
+  line-height: 1.75;
+  margin: 0 0 20px;
+}
+
+.section ul {
+  padding-left: 24px;
+  margin: 10px 0 0;
+}
+
+.section ul li {
+  margin-bottom: 12px;
 }
 
 .pull-quote {
@@ -631,7 +641,7 @@ img {
 
 /* Experiment Gallery Styles */
 .experiments-container {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .experiment-tabs button.exp-tab {
@@ -729,6 +739,7 @@ img {
 .step-row .asset-col video {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: block;
+  margin: 0;
 }
 
 @media (max-width: 768px) {

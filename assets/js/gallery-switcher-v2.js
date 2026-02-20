@@ -149,3 +149,29 @@ function switchView(videoId, viewType) {
         });
     }
 }
+
+// Image View Switching Logic (Front/Side) - same pattern as switchView but for <img>
+function switchImgView(imgId, viewType) {
+    const img = document.getElementById(imgId);
+    if (!img) return;
+
+    const frontPath = img.getAttribute('data-front');
+    const sidePath = img.getAttribute('data-side');
+
+    if (frontPath && sidePath) {
+        img.src = (viewType === 'side') ? sidePath : frontPath;
+    }
+
+    // Toggle UI state
+    const wrapper = img.closest('.video-wrapper') || img.closest('.asset-col');
+    if (wrapper) {
+        const btns = wrapper.querySelectorAll('.view-toggle button');
+        btns.forEach(btn => {
+            if (btn.innerText.toLowerCase().includes(viewType)) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+}
