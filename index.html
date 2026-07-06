@@ -116,11 +116,7 @@ The template is structured for research papers but can be adapted for any projec
       <div class="tagline" id="abstract">Research Highlights</div>
       <div class="section">
         <p>
-          Solving long-horizon manipulation tasks requires integrating high-level semantic reasoning with
-          physically grounded low-level control. We introduce <b>NovaPlan</b>, a hierarchical framework for
-          <b>zero-shot long-horizon manipulation</b> that unifies <b>closed-loop video language planning</b>
-          with <b>geometrically grounded robot execution</b>, with no prior demonstrations or task-specific training
-          required.
+          Solving complex long-horizon robotic tasks requires joint reasoning over abstract task structure and low-level physical interaction. We introduce <b>NovaPlan</b>, a hierarchical framework that enables <b>robust, zero-shot long-horizon manipulation</b> by systematically proposing, verifying, and repairing visual plans.
         </p>
         <ul style="text-align: left; line-height: 1.8; margin-top: 10px;">
           <li><b>Closed-Loop Video Language Planner:</b> A VLM planner decomposes tasks into <b>multi-step</b>
@@ -128,14 +124,12 @@ The template is structured for research papers but can be adapted for any projec
             robot action extraction. The system monitors execution in a closed loop, enabling recovery from
             single-step failures through autonomous re-planning.
           </li>
-          <li><b>Dual-Flow Action Extraction:</b> To compute low-level robot actions, the system extracts
+          <li><b>Hybrid Flow Action Extraction:</b> To compute low-level robot actions, the system extracts
             <b>object flow</b> (task-relevant 3D object keypoint tracking) and <b>hand flow</b> (human hand pose
             estimation) from generated videos, and employs a switching mechanism to select the better flow reference,
             maintaining stable execution even under heavy occlusion or depth inaccuracy.
           </li>
-          <li><b>Strong Zero-Shot Performance:</b> NovaPlan achieves strong zero-shot performance on diverse
-            long-horizon tasks and the Functional Manipulation Benchmark (FMB), solving complex multi-step assembly
-            tasks and performing non-prehensile error recovery via hand poking, all without any prior training.
+          <li><b>Strong Zero-Shot Performance:</b> NovaPlan substantially outperforms prior zero-shot systems across diverse multi-stage tasks, achieving complex assembly and dexterous non-prehensile error recovery entirely without task-specific training or demonstrations.
           </li>
         </ul>
       </div>
@@ -161,6 +155,10 @@ The template is structured for research papers but can be adapted for any projec
             </div>
             <p class="figure-caption" style="margin-bottom: 8px; text-align: center;">
               3D Point Cloud &amp; <span id="flow-type-label">Actionable Object Flow</span> from Generated Video
+              <br>
+              <span style="font-weight: 400; font-size: 0.9em; opacity: 0.8;">
+                Drag to rotate · scroll to zoom · play/scrub with the timeline below.
+              </span>
             </p>
             <iframe id="task-viewer" style="display: block; width: 100%; height: 500px; border: none;"></iframe>
             <p class="figure-caption" style="text-align: left;">
@@ -189,7 +187,7 @@ The template is structured for research papers but can be adapted for any projec
         </div>
       </div>
 
-      <div class="tagline" id="methods">Methods</div>
+      <div class="tagline" id="methods">Method Overview</div>
       <!-- TODO: use ppt do a gif -->
       <div class="section">
         <video src="assets/mp4/method_gif.mp4" style="width: 90%; display: block; margin: 20px auto 10px auto;" autoplay
@@ -211,7 +209,7 @@ The template is structured for research papers but can be adapted for any projec
       </div>
 
       <!-- Start of Ablations/Experiments -->
-      <div class="tagline" id="ablations">Experiments</div>
+      <div class="tagline" id="ablations">Experiment Videos</div>
       <!-- Example Experiment Gallery -->
       <div class="video-gallery-section" id="gallery-section-experiments">
         <div class="experiments-container" style="max-width: 1400px; margin: 0 auto;">
@@ -675,9 +673,8 @@ The template is structured for research papers but can be adapted for any projec
         <div class="gallery-caption-container">
           <p class="figure-caption gallery-caption">
             <b>Quantitative Results:</b> NovaPlan achieves the highest long-horizon success rate on all three
-            multi-step tasks, i.e., <b>Four-layer Block Stacking</b>, <b>Color Sorting</b>, and <b>Hidden Object
-              Search</b>, outperforming both the leading VLA method (π<sub>0.5</sub>) and VLM-based planning method
-            (MOKA). By leveraging both object and hand flows for
+            multi-step tasks, namely, <b>Four-layer Block Stacking</b>, <b>Color Sorting</b>, and <b>Hidden Object
+              Search</b>, outperforming leading VLA- (π<sub>0.5</sub>), video- (NovaFlow), and VLM-based (MOKA) methods. By leveraging both object and hand flows for
             stability and non-prehensile recovery, NovaPlan demonstrates stable short-horizon task execution and
             robust
             recovery capabilities, maintaining strong per-step performance even as task complexity increases. For fair
@@ -733,8 +730,7 @@ The template is structured for research papers but can be adapted for any projec
             incorrect object flow extraction. <b>(3) Hand Tracking Failure:</b> HaMeR fails to robustly track the
             hand, leading to incorrect hand flow extraction. <b>(4) Execution Failure:</b> Inaccurate flow estimation
             leads to failed execution. <b>(5) Inability to Reorient:</b> Our existing regrasp and non-prehensile
-            poking mechanisms cannot recover the end state of the green block, as it requires reorientation which our
-            system cannot handle.
+            poking mechanisms cannot recover the end state of the green block, as this requires reorientation, which our system cannot handle.
           </p>
         </div>
       </div>
